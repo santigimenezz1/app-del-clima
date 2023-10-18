@@ -1,0 +1,68 @@
+.SectionInfo{
+    display: flex;
+}
+.favorito{
+    width: 30%;
+    height: 99vh;
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 15px;
+    gap: 40px;
+    background-color: rgb(16, 14, 29)
+    
+    
+}
+.favorito__tarjetas{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: scroll;
+    padding: 20px;
+}
+
+.favorito__tarjetas::-webkit-scrollbar {
+    width: 12px;
+    /* Cambia el ancho del scrollbar a tu gusto */
+}
+
+.favorito__tarjetas::-webkit-scrollbar-thumb {
+    background-color: rgb(67, 67, 74); /* Cambia el color del thumb del scrollbar */
+     /* Cambia la forma del thumb del scrollbar */
+    
+}
+
+.infoCuidad{
+    width: 70%;
+    height: 99vh;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 10px;
+    padding-top: 30px;
+    flex-direction: column;
+    gap: 20px;
+    background-color: rgb(16, 14, 29);
+    overflow-y: scroll;
+}
+
+.infoCuidad__diaSemana{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 15px;
+}
+
+.tarjetasSecundarias{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+
+.tarjetasHorario{
+    width: 100%;
+}

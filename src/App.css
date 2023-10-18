@@ -5,6 +5,14 @@
 }
 
 body{
-  background-color: rgb(81, 48, 125);
-  
+  background-color: white
+}
+.backgroudParticle{
+  z-index: -1;
+}
+.main{
+  width: 100%;
+  border: 1px solid red;
+  height: 500px;
+  margin: 30px;
 }

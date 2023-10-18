@@ -1,0 +1,18 @@
+.buscador{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.buscador__button{
+  width: 60px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  background-color: blueviolet;
+  color: white;
+  padding: 5px;
+  transition: all .2s;
+}
+.buscador__button:hover{
+    background-color: rgb(115, 23, 201);
+  }

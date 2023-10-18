@@ -1,0 +1,14 @@
+.tarjetaHorario {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  border: none;
+  padding: 40px;
+}
+
+/* Ajusta el margen entre las tarjetas según sea necesario */
+.tarjetaHora {
+  margin-right: 5px;
+}
