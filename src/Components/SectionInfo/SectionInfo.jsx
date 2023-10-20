@@ -27,7 +27,7 @@ const SectionInfo = () => {
    const [diasSemana, setDiasSemana] = useState([dia2, dia3, dia4, dia5])
    const [fechaHoras, setFechaHoras] = useState("")
 //-------------------------------------------------------------------------------------------
-   const [estadoFavorito, setEstadoFavorito] = useState([{},{},{},{}])
+   const [estadoFavorito, setEstadoFavorito] = useState([])
 
 
    const peticion = (data)=>{
@@ -96,7 +96,7 @@ useEffect(() => {                   //aca espera a que ya este seteado el estado
     <div className="favorito__tarjetas">
     {
       estadoFavorito.map((favorito)=>(
-     <TarjetaFavorito urlVideo={"https://res.cloudinary.com/dcf9eqqgt/video/upload/v1697403666/APP%20del%20tiempo/production_id_4562023_720p_pejcs1.mp4"} cuidad={"Valencia"} grados={24} />
+     <TarjetaFavorito peticion={peticion}  nombre={favorito.nombre} temperatura={favorito.temperatura} temperaturaMaxima={favorito.temperaturaMaxima} temperaturaMinima={favorito.temperaturaMinima} clima={favorito.clima} />
 
       ))
     }
@@ -104,7 +104,7 @@ useEffect(() => {                   //aca espera a que ya este seteado el estado
     </div>
     </section>
     <section className="infoCuidad">
-       <TarjetaPrincipal data={data} estadoFavorito={estadoFavorito} setEstadoFavorito={setEstadoFavorito} />
+       <TarjetaPrincipal  data={data} estadoFavorito={estadoFavorito} setEstadoFavorito={setEstadoFavorito} />
        <div className="infoCuidad__diaSemana"> 
        {
         Object.keys(data).length > 0 && (

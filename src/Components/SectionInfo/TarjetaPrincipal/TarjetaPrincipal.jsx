@@ -9,14 +9,35 @@ const TarjetaPrincipal = ( {data, estadoFavorito, setEstadoFavorito} ) => {
   let objetoFavorito;
 
   if (Object.keys(data).length > 0) {
-    objetoFavorito = {
-      nombre: data.name,
-      temperatura: (data.main.temp - 273.15).toFixed(0),
-      temperaturaMaxima: (data.main.temp_max - 273.15).toFixed(0),
-      temperaturaMinima: (data.main.temp_min - 273.15).toFixed(0),
-      clima: data.weather[0].description
+      objetoFavorito = 
+        {
+          nombre: data.name,
+          temperatura: (data.main.temp - 273.15).toFixed(0),
+          temperaturaMaxima: (data.main.temp_max - 273.15).toFixed(0),
+          temperaturaMinima: (data.main.temp_min - 273.15).toFixed(0),
+          clima: data.weather[0].description
+       }   
+    }
+
+    const toggleHeart = () => {
+      setHeart(!heart); // Cambia el estado de heart
+    
+      if (!heart) {
+        // Si el corazón no está marcado, agrega el objeto a estadoFavorito
+        setEstadoFavorito([...estadoFavorito, objetoFavorito]);
+      }
     };
-  }
+    
+
+
+
+
+
+
+
+
+
+
 
   console.log({objetoFavorito})
   console.log({estadoFavorito})
@@ -31,7 +52,8 @@ const TarjetaPrincipal = ( {data, estadoFavorito, setEstadoFavorito} ) => {
         <div>
         
         {
-          !heart ?  <div style={{cursor:"pointer"}} onClick={()=>setHeart(!heart)}> <FavoriteBorderIcon  /> </div >    : <div  style={{cursor:"pointer"}} onClick={()=>setHeart(!heart)}> <FavoriteIcon /> </div>   
+          Object.keys(data).length > 0 &&
+          !heart ?  <div style={{cursor:"pointer"}} onClick={()=>toggleHeart()}> <FavoriteBorderIcon  /> </div >    : <div  style={{cursor:"pointer"}} onClick={()=>setHeart(!heart)}> <FavoriteIcon /> </div>   
         }
         
         </div>
