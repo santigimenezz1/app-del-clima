@@ -87,6 +87,7 @@ useEffect(() => {                   //aca espera a que ya este seteado el estado
    
    console.log({data})
   return (
+    
     <div className="SectionInfo">
     <div style={{zIndex:"-1"}}>
     <Background />
@@ -97,10 +98,14 @@ useEffect(() => {                   //aca espera a que ya este seteado el estado
     </div>
     <div className="favorito__tarjetas">
     {
+      estadoFavorito.length > 0 ?
       estadoFavorito.map((favorito)=>(
      <TarjetaFavorito peticion={peticion}  nombre={favorito.nombre} temperatura={favorito.temperatura} temperaturaMaxima={favorito.temperaturaMaxima} temperaturaMinima={favorito.temperaturaMinima} clima={favorito.clima} />
-
       ))
+      :
+      <div className="container__sinFavoriotos">
+      <h1>Agregá un favorito</h1>
+    </div>
     }
    
     </div>
