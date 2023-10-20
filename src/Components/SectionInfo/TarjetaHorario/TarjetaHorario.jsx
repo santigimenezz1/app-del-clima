@@ -1,18 +1,29 @@
 import '../TarjetaHorario/tarjetaHorario.css'
 import TarjetaHora from './TarjetaHora/TarjetaHora'
-const TarjetaHorario = () => {
+const TarjetaHorario = ( {diaOn, fechaHoras} ) => {
+
+
+
   return (
+   
     <div className='tarjetaHorario'>
+{
+  Object.keys(diaOn).length > 0 ?
+  <div className='tarjetaHorario__container__titulo'>
+  <h1 className='tarjetaHorario__titulo'>{fechaHoras}</h1>
+  </div>
+  : <h1>kjasdjkas</h1>
+}     
       <div style={{display:"flex"}}>
-      <TarjetaHora dia={"00:00"} temperatura={"24º"} />
-      <TarjetaHora dia={"3:00"} temperatura={"20º"}  />
-      <TarjetaHora dia={"6:00"} temperatura={"21º"}  />
-      <TarjetaHora dia={"9:00"} temperatura={"16º"}  />
-      <TarjetaHora dia={"12:00"} temperatura={"16º"}  />
-      <TarjetaHora dia={"15:00"} temperatura={"14º"}  />
-      <TarjetaHora dia={"18:00"} temperatura={"12º"}  />
-      <TarjetaHora dia={"21:00"} temperatura={"11º"}  />
-      <TarjetaHora dia={"24:00"} temperatura={"7º"}  />
+      {
+           Object.keys(diaOn).length > 0 ?
+           diaOn.map((hora)=>(
+             <TarjetaHora key={1}  dia={hora.dt_txt.slice(11,16)} temperatura={(hora.main.temp - 273.15).toFixed(0)} hora={hora}/>
+           ))
+           : 
+           <h1 style={{color:"white"}}>no llega</h1>
+      }
+     
       </div>
 
  

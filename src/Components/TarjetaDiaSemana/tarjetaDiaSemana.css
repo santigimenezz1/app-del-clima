@@ -1,13 +1,13 @@
 .tarjetaDiaSemana{
     border: none;
-    width: 150px;
+    width: 190px;
     height: 100px;
     border-radius: 4px;
     font-size: 10px;
     padding: 15px;
     display: flex;
     flex-direction: column;
-    background-color: rgba(51, 80, 138, 0.622);
+    background-color: rgba(51, 80, 138, 0.337);
     color: white;
     cursor: pointer;
     transition: all .2s;

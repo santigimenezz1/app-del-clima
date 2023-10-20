@@ -2,17 +2,46 @@
     display: flex;
     align-items: center;
     gap: 10px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 .buscador__button{
-  width: 60px;
+  width: 100px;
+  height: 40px;
   border-radius: 4px;
   border: none;
   cursor: pointer;
-  background-color: blueviolet;
+ background-color: rgba(51, 80, 138, 0.323);
   color: white;
   padding: 5px;
   transition: all .2s;
 }
 .buscador__button:hover{
-    background-color: rgb(115, 23, 201);
+  background-color: rgba(63, 98, 168, 0.323);
   }
+  .buscador__form{
+    height: 50px;
+    padding: 10px;
+    border-radius: 4px;
+    border: none;
+    background-color: rgba(63, 98, 168, 0.28);
+    color: white;
+    font-size: 16px;
+
+  }
+
+  .buscador__form::placeholder {
+    color: #ff0000; /* Cambia el color del placeholder al que desees */
+    font-size: 54px; /* Cambia el tamaño de fuente del placeholder */
+    font-style: italic; /* Cambia el estilo de fuente del placeholder, p. ej., italic */
+    /* Agrega otros estilos según tus necesidades */
+    background-color: transparent; /* Establece el fondo del input en el color deseado */
+    background-clip: content-box; /* Controla el área donde se aplica el fondo */
+    background:"red"
+  }
+
+  .buscador__form:focus {
+    outline: none; /* Elimina el borde externo al hacer clic en el input */
+    border: none;
+  }
+
+  

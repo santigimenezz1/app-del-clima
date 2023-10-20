@@ -1,12 +1,33 @@
 import '../TarjetaPrincipal/tarjetaPrincipal.css'
 import TarjetaSecundaria from '../TarjetaSecundaria/TarjetaSecundaria'
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import { useState } from 'react';
 const TarjetaPrincipal = ( {data} ) => {
+  const [heart, setHeart] = useState(false)
   return (
 
     <div className='tarjetaPrincipal'>
     {
       Object.keys(data).length > 0 ?(
         <>
+        <div className='container__textHoy'>
+        <h1>HOY</h1>
+        <div>
+        
+        {
+          !heart ?  <div style={{cursor:"pointer"}} onClick={()=>setHeart(!heart)}> <FavoriteBorderIcon  /> </div >    : <div  style={{cursor:"pointer"}} onClick={()=>setHeart(!heart)}> <FavoriteIcon /> </div>   
+
+
+        }
+        
+       
+        
+      
+     
+
+        </div>
+        </div>
         <h1 className='tarjetaPrincipal__cuidad'>{data.name}</h1>
         <div className='container__temperaturaDescription'>
         <h1 className='tarjetaPrincipal__temperaturaActual'>{(data.main.temp - 273.15).toFixed(0)}º</h1>
