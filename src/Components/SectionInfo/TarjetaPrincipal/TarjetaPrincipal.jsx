@@ -4,8 +4,7 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { useState } from 'react';
 import { Skeleton } from '@mui/material';
-const TarjetaPrincipal = ( {data, estadoFavorito, setEstadoFavorito} ) => {
-  const [heart, setHeart] = useState(false)
+const TarjetaPrincipal = ( {data, estadoFavorito, setEstadoFavorito, heart, setHeart} ) => {
   let objetoFavorito;
 
   if (Object.keys(data).length > 0) {
@@ -26,6 +25,10 @@ const TarjetaPrincipal = ( {data, estadoFavorito, setEstadoFavorito} ) => {
         // Si el corazón no está marcado, agrega el objeto a estadoFavorito
         setEstadoFavorito([...estadoFavorito, objetoFavorito]);
       }
+      const fav = ()=>{
+        setHeart(false)
+      }
+    
     };
     
 

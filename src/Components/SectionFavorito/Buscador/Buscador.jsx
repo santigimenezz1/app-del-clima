@@ -2,7 +2,7 @@ import { TextField } from '@mui/material'
 import '../Buscador/buscador.css'
 import { useState } from 'react'
 import { useFormik } from 'formik'
-const Buscador = ({ peticion, peticionDias, peticionMapas }) => {
+const Buscador = ({ peticion, peticionDias, peticionMapas, setHeart }) => {
   const { handleSubmit, handleChange } = useFormik({
     initialValues: {
       cuidad: ""
@@ -11,6 +11,7 @@ const Buscador = ({ peticion, peticionDias, peticionMapas }) => {
       peticionDias(data.cuidad)
       peticion(data.cuidad);
       peticionMapas()
+      setHeart(false)
     },
     validateOnChange: false,
     validateOnBlur:false,

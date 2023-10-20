@@ -28,6 +28,8 @@ const SectionInfo = () => {
    const [fechaHoras, setFechaHoras] = useState("")
 //-------------------------------------------------------------------------------------------
    const [estadoFavorito, setEstadoFavorito] = useState([])
+   const [heart, setHeart] = useState(false)
+
 
 
    const peticion = (data)=>{
@@ -91,7 +93,7 @@ useEffect(() => {                   //aca espera a que ya este seteado el estado
     </div>
     <section className="favorito">
     <div className="buscador">
-    <Buscador peticion={peticion} peticionDias={peticionDias} peticionMapas={peticionMapas} />
+    <Buscador setHeart={setHeart}  peticion={peticion} peticionDias={peticionDias} peticionMapas={peticionMapas} />
     </div>
     <div className="favorito__tarjetas">
     {
@@ -104,7 +106,7 @@ useEffect(() => {                   //aca espera a que ya este seteado el estado
     </div>
     </section>
     <section className="infoCuidad">
-       <TarjetaPrincipal  data={data} estadoFavorito={estadoFavorito} setEstadoFavorito={setEstadoFavorito} />
+       <TarjetaPrincipal heart={heart} setHeart={setHeart}  data={data} estadoFavorito={estadoFavorito} setEstadoFavorito={setEstadoFavorito} />
        <div className="infoCuidad__diaSemana"> 
        {
         Object.keys(data).length > 0 && (
