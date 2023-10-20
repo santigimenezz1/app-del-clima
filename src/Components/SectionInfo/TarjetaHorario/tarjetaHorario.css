@@ -25,3 +25,9 @@
   font-size: 40px;
   text-align: start;
 }
+
+.section__SecundariasHora{
+  display: flex;
+  gap: 10px;
+}
+

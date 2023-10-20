@@ -27,11 +27,10 @@ const SectionInfo = () => {
    const [diasSemana, setDiasSemana] = useState([dia2, dia3, dia4, dia5])
    const [fechaHoras, setFechaHoras] = useState("")
 //-------------------------------------------------------------------------------------------
-                                    
+   const [estadoFavorito, setEstadoFavorito] = useState([{},{},{},{}])
 
 
-
-       const peticion = (data)=>{
+   const peticion = (data)=>{
        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${data}&appid=56fb42e6cafbcdee72360410ea42141c&lang=es`)
        .then((response)=>response.json())
        .then((response)=>setData(response))
@@ -57,7 +56,6 @@ const SectionInfo = () => {
         }
     });
 }
- 
 const peticionMapas = () => {
   fetch('https://tile.openweathermap.org/map/wind_new/15/100/100.png?appid=56fb42e6cafbcdee72360410ea42141c&lang=es')
     .then((response) => response) // Obtener la URL directamente
@@ -70,29 +68,22 @@ const peticionMapas = () => {
     });
 }
 
-
-
 useEffect(() => {
   setDiaOn(diaActual);
 }, [diaActual]);
 
+useEffect(() => {                   //aca espera a que ya este seteado el estado con la fecha en el useEffect anterior
+  if (Object.keys(dia2).length > 0) {
+    let dateString = dia2[0].dt_txt;
+    let date = new Date(dateString);
+    let daysOfWeek = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+    let dayOfWeekNumber = date.getDay();
+    setFechaHoras(daysOfWeek[dayOfWeekNumber]); // Actualiza el estado con el nombre del día
+  }
+}, [dia2]);
 
    
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-  console.log({dia2})
+   console.log({data})
   return (
     <div className="SectionInfo">
     <div style={{zIndex:"-1"}}>
@@ -103,16 +94,17 @@ useEffect(() => {
     <Buscador peticion={peticion} peticionDias={peticionDias} peticionMapas={peticionMapas} />
     </div>
     <div className="favorito__tarjetas">
-    <TarjetaFavorito urlVideo={"https://res.cloudinary.com/dcf9eqqgt/video/upload/v1697403666/APP%20del%20tiempo/production_id_4562023_720p_pejcs1.mp4"} cuidad={"Valencia"} grados={24} />
-    <TarjetaFavorito urlVideo={"https://res.cloudinary.com/dcf9eqqgt/video/upload/v1697406318/APP%20del%20tiempo/video_360p_mgvcqh.mp4"} cuidad={"Barcelona"} grados={20} />
-    <TarjetaFavorito urlVideo={"https://res.cloudinary.com/dcf9eqqgt/video/upload/v1697406590/APP%20del%20tiempo/soleado_nkqpac.mp4"} cuidad={"Rosario"} grados={11} />
-    <TarjetaFavorito urlVideo={"https://res.cloudinary.com/dcf9eqqgt/video/upload/v1697403666/APP%20del%20tiempo/production_id_4562023_720p_pejcs1.mp4"} cuidad={"Valencia"} grados={24} />
-    <TarjetaFavorito urlVideo={"https://res.cloudinary.com/dcf9eqqgt/video/upload/v1697406318/APP%20del%20tiempo/video_360p_mgvcqh.mp4"} cuidad={"Barcelona"} grados={20} />
-    <TarjetaFavorito urlVideo={"https://res.cloudinary.com/dcf9eqqgt/video/upload/v1697406590/APP%20del%20tiempo/soleado_nkqpac.mp4"} cuidad={"Rosario"} grados={11} />
+    {
+      estadoFavorito.map((favorito)=>(
+     <TarjetaFavorito urlVideo={"https://res.cloudinary.com/dcf9eqqgt/video/upload/v1697403666/APP%20del%20tiempo/production_id_4562023_720p_pejcs1.mp4"} cuidad={"Valencia"} grados={24} />
+
+      ))
+    }
+   
     </div>
     </section>
     <section className="infoCuidad">
-       <TarjetaPrincipal data={data} />
+       <TarjetaPrincipal data={data} estadoFavorito={estadoFavorito} setEstadoFavorito={setEstadoFavorito} />
        <div className="infoCuidad__diaSemana"> 
        {
         Object.keys(data).length > 0 && (

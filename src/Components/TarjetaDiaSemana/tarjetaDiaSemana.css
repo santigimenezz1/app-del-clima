@@ -1,7 +1,7 @@
 .tarjetaDiaSemana{
     border: none;
     width: 190px;
-    height: 100px;
+    height: 110px;
     border-radius: 4px;
     font-size: 10px;
     padding: 15px;
@@ -19,13 +19,20 @@
 }
 .tarjetaDiaSemana__info{
     display: flex;
-    justify-content: center;
-    gap: 10px;
+    justify-content: start;
+    gap: 15px;
     align-items: center;
 }
 .tarjetaDiaSemana__info img{
     width: 50px;
     height: 50px;
-
-
+}
+.iconClima{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    gap: 5px;
+}
+.temperatura{
+    font-size: 14px;
 }

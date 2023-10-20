@@ -15,10 +15,8 @@ const TarjetaFavorito = ( {urlVideo, cuidad, grados } ) => {
       <h4>Maxima: 27 minima: 12</h4>
      </div>
    </div>
-    <video autoPlay loop muted className="background-video">
-    <source src={urlVideo} />
-    Tu navegador no soporta videos en HTML5.
-  </video>    </div>
+     
+  </div>
   )
 }
 

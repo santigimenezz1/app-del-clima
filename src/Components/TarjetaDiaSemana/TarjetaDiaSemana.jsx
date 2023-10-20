@@ -6,6 +6,7 @@ const TarjetaDiaSemana = ({ dia, maxima, minima, setDiaOn, dia2, dia3, dia4, dia
   const [dayOfWeek, setDayOfWeek] = useState(""); // Agrega un estado para el día de la semana
   const [tempMaxima, setTempMaxima] = useState()
   const [tempminima, setTempminima] = useState()
+  const [clima, setClima] = useState()
   const [icon, setIcon] = useState()
 
 
@@ -15,6 +16,8 @@ const TarjetaDiaSemana = ({ dia, maxima, minima, setDiaOn, dia2, dia3, dia4, dia
       let icon = dia[1].weather[0].icon
       let iconUrl = `https://openweathermap.org/img/w/${icon}.png`
       setIcon(iconUrl)
+      let clima = dia[1].weather[0].description
+      setClima(clima)
     }
   }, [dia]);
 
@@ -37,13 +40,20 @@ const TarjetaDiaSemana = ({ dia, maxima, minima, setDiaOn, dia2, dia3, dia4, dia
 
   return (
     <div onClick={() => setDiaOn_setFechaHoras()} className='tarjetaDiaSemana'>
+    <div style={{display:"flex", justifyContent:"space-between"}}>
+    <h1>{dayOfWeek}</h1> {/* Muestra el día de la semana */}
+    <div>
+    <h1 className='temperatura'>Máx: 25º</h1>
+    <h1 className='temperatura'>Míx: 14º</h1>
+  </div>
+    </div>
+
       <div className='tarjetaDiaSemana__info'>
-        <img src={icon}></img>
-        <div>
-          <h1>{25}º</h1>
-          <h1>{14}º</h1>
-          <h1>{dayOfWeek}</h1> {/* Muestra el día de la semana */}
-        </div>
+      <div className='iconClima'>
+      <img src={icon}></img>
+      <h1>{clima}</h1>
+      </div>
+      
       </div>
     </div>
   );
