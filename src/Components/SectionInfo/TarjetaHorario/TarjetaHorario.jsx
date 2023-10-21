@@ -5,6 +5,8 @@ import TarjetaSecundaria from '../TarjetaSecundaria/TarjetaSecundaria'
 import TarjetaSecundariaHora from '../TarjetaSecundariaHora/TarjetaSecundariaHora'
 const TarjetaHorario = ( {diaOn, fechaHoras} ) => {
 
+
+  console.log({diaOn})
   return (
    
     <div className='tarjetaHorario'>
@@ -22,7 +24,7 @@ const TarjetaHorario = ( {diaOn, fechaHoras} ) => {
     </div>
   )
 }     
-      <div style={{display:"flex"}}>
+      <div className='container__tarjetasHora'>
       {
            Object.keys(diaOn).length > 0 ?
            diaOn.map((hora)=>(

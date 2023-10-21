@@ -1,0 +1,226 @@
+@media screen and (max-width: 1000px) {
+    /*SECTION FAVORITOS*/
+    .buscador__button{
+        width: 70px;
+    }
+    
+    /*SECTION INFO*/
+    .infoCuidad__diaSemana{
+        flex-wrap: wrap;
+    }
+    .tarjetaDiaSemana{
+        width: 29vw;
+        height: 120px;
+    }
+    .tarjetaHora{
+      width: 135px;
+      height: 140px;
+    }
+
+    .container__tarjetaSecundariaHora{
+        width: 27vw;
+    } 
+}
+
+@media screen and (max-width: 900px) {
+  .SectionInfo{
+    flex-direction: column;
+  }
+  .favorito{
+    width: 100%;
+    align-items: start;
+    height: auto;
+    gap: 15px;
+    flex-direction: column;
+    padding: 20px;
+    background: rgb(141, 36, 246)
+
+  }
+  .favorito__tarjetas{
+    flex-direction: row-reverse;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0px;
+    overflow-y: hidden;
+   
+  }
+  .buscador{
+    width: 100%;
+    justify-content: center;
+  }
+
+
+  .tarjetaFavorito{
+   height: 40px;
+   width: 120px;
+  }
+  .titulo__cuidad{
+    font-size: 15px;
+  }
+  
+  .tarjetaFvorito__info__maxima-minima{
+    display: none;
+  }
+  .hora__tarjetaFavorito{
+    display: none;
+  }
+  .temperatura__tarjetaFavorito{
+    font-size: 15px;
+  }
+
+  .tarjetaFvorito__info__cuidad-horario{
+    display: flex ;
+    gap: 10px;
+    justify-content: start;
+    padding: 0px;
+  }
+
+  .container__sinFavoritos{
+    height: 50px;
+    font-size: 13px;
+  }
+
+
+
+
+
+  .infoCuidad{
+    width: 100%;
+    overflow-y: hidden;
+    height: auto;
+  }
+  .tarjetaPrincipal{
+    width: 90%;
+  }
+  .tarjetaDiaSemana{
+    width: 20vw;
+    height: 120px;
+}
+.tarjetaHora{
+    width: 90px;
+    height: 140px;
+  }
+
+  .container__tarjetaSecundariaHora{
+      width: 20vw;
+  } 
+}
+
+
+
+@media screen and (max-width: 800px) {
+    /*SECTION FAVORITOS*/
+    .buscador__button{
+        width: 70px;
+    }
+    
+    /*SECTION INFO*/
+    .infoCuidad__diaSemana{
+        flex-wrap: wrap;
+    }
+    .tarjetaDiaSemana{
+        width: 42vw;
+        height: 120px;
+    }
+    .tarjetaHora{
+      width: 160px;
+      height: 140px;
+    }
+
+    .container__tarjetaSecundariaHora{
+        width: 40vw;
+    } 
+}
+
+@media screen and (max-width: 600px) {
+    /*SECTION FAVORITOS*/
+    .buscador__button{
+        width: 70px;
+    }
+    
+    /*SECTION INFO*/
+    .infoCuidad__diaSemana{
+        flex-wrap: wrap;
+    }
+    .tarjetaDiaSemana{
+        width: 42vw;
+        height: 120px;
+    }
+    .tarjetaHora{
+      width: 120px;
+      height: 120px;
+    }
+    .container__tarjetasHora{
+        width: 100vw;
+    }
+
+    .section_SecundariasHora{
+        border: 1px solid red;
+    }
+    .container__tarjetaSecundariaHora{
+        width: 39vw;
+    } 
+}
+
+@media screen and (max-width: 600px) {
+    /*SECTION FAVORITOS*/
+    .buscador__button{
+        width: 70px;
+    }
+    
+    /*SECTION INFO*/
+    .infoCuidad__diaSemana{
+        flex-wrap: wrap;
+    }
+    .tarjetaDiaSemana{
+        width: 42vw;
+        height: 120px;
+    }
+    .tarjetaHora{
+      width: 110px;
+      height: 120px;
+    }
+    .container__tarjetasHora{
+        width: 100vw;
+        padding: 10px;
+    }
+
+    .section__SecundariasHora{
+        width: 100vw;
+    }
+    .container__tarjetaSecundariaHora{
+        width: 44vw;
+    } 
+}
+
+
+@media screen and (max-width: 414px) {
+    /*SECTION FAVORITOS*/
+    .buscador__button{
+        width: 70px;
+    }
+    
+    /*SECTION INFO*/
+    .infoCuidad__diaSemana{
+        flex-wrap: wrap;
+    }
+    .tarjetaDiaSemana{
+        width: 42vw;
+        height: 120px;
+    }
+    .tarjetaHora{
+      width: 90px;
+      height: 120px;
+    }
+    .container__tarjetasHora{
+        width: 100vw;
+        padding: 10px;
+    }
+
+    .section__SecundariasHora{
+        width: 100vw;
+    }
+    .container__tarjetaSecundariaHora{
+        width: 44vw;
+    } 
+}

@@ -132,7 +132,7 @@ useEffect(() => {                   //aca espera a que ya este seteado el estado
      <TarjetaFavorito peticion={peticion}  nombre={favorito.nombre} temperatura={favorito.temperatura} temperaturaMaxima={favorito.temperaturaMaxima} temperaturaMinima={favorito.temperaturaMinima} clima={favorito.clima} />
       ))
       :
-      <div className="container__sinFavoriotos">
+      <div className="container__sinFavoritos">
       <h1>Agregá un favorito</h1>
     </div>
     }

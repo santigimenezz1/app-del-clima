@@ -26,8 +26,17 @@
   text-align: start;
 }
 
+
+.container__tarjetasHora{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2px;
+}
+
 .section__SecundariasHora{
   display: flex;
   gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-

@@ -1,10 +1,16 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import '../TarjetaHora/tarjetaHora.css'
 const TarjetaHora = ( {dia, temperatura, hora, clima} ) => {
   
-   const [icon, setIcon] = useState(`https://openweathermap.org/img/w/${hora.weather[0].icon}.png`)
-
-
+   const [icon, setIcon] = useState()
+     
+     useEffect(()=>{
+      let icon = hora.weather[0].icon
+      let iconUrl = `https://openweathermap.org/img/w/${icon}.png`
+      setIcon(iconUrl)
+     },[hora])
+   
+   console.log({hora})
 
   return (
     <div className='tarjetaHora'>
