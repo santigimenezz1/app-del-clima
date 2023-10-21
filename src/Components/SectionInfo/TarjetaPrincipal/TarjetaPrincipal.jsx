@@ -4,7 +4,7 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { useState } from 'react';
 import { Skeleton } from '@mui/material';
-const TarjetaPrincipal = ( {data, estadoFavorito, setEstadoFavorito, heart, setHeart} ) => {
+const TarjetaPrincipal = ( {data, estadoFavorito, setEstadoFavorito, heart, setHeart, existe} ) => {
   let objetoFavorito;
 
   if (Object.keys(data).length > 0) {
@@ -18,16 +18,24 @@ const TarjetaPrincipal = ( {data, estadoFavorito, setEstadoFavorito, heart, setH
        }   
     }
 
-    const AgregarObjeto = () => {
+  
+
+ 
+    const AgregarObjeto = (cuidad) => {
       setHeart(!heart); // Cambia el estado de heart
-    
       if (!heart) {
-        // Si el corazón no está marcado, agrega el objeto a estadoFavorito
-        setEstadoFavorito([...estadoFavorito, objetoFavorito]);
+        let ternario = existe(cuidad)
+          if(ternario){
+          }else{
+            setEstadoFavorito([...estadoFavorito, objetoFavorito])
+          }
+           // Si el corazón no está marcado, agrega el objeto a estadoFavorito
+           
       }
       const fav = ()=>{
         setHeart(false)
       }
+ 
     
     };
 
@@ -39,6 +47,7 @@ const TarjetaPrincipal = ( {data, estadoFavorito, setEstadoFavorito, heart, setH
       setHeart(!heart)
         setEstadoFavorito(arregloFiltrado)
     }
+
       
 
     
@@ -66,7 +75,7 @@ const TarjetaPrincipal = ( {data, estadoFavorito, setEstadoFavorito, heart, setH
         
         {
           Object.keys(data).length > 0 &&
-          !heart ?  <div style={{cursor:"pointer"}} onClick={()=>AgregarObjeto()}> <FavoriteBorderIcon  /> </div >    : <div onClick={()=>eliminarObjeto()} style={{cursor:"pointer"}}> <FavoriteIcon /> </div>   
+          !heart ?  <div style={{cursor:"pointer"}} onClick={()=>AgregarObjeto(data.name)}> <FavoriteBorderIcon  /> </div >    : <div onClick={()=>eliminarObjeto()} style={{cursor:"pointer"}}> <FavoriteIcon /> </div>   
         }
         
         </div>

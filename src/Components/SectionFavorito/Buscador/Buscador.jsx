@@ -2,7 +2,7 @@ import { TextField } from '@mui/material'
 import '../Buscador/buscador.css'
 import { useState } from 'react'
 import { useFormik } from 'formik'
-const Buscador = ({ peticion, peticionDias, peticionMapas, setHeart }) => {
+const Buscador = ({ peticion, peticionDias, peticionMapas, setHeart, existe }) => {
   const { handleSubmit, handleChange } = useFormik({
     initialValues: {
       cuidad: ""
@@ -11,7 +11,14 @@ const Buscador = ({ peticion, peticionDias, peticionMapas, setHeart }) => {
       peticionDias(data.cuidad)
       peticion(data.cuidad);
       peticionMapas()
-      setHeart(false)
+      const cuidadMayuscula = data.cuidad.charAt(0).toUpperCase() + data.cuidad.slice(1);
+      const exist = existe(cuidadMayuscula);
+      
+      if (exist) {
+        setHeart(true);
+      } else {
+        setHeart(false)
+      }
     },
     validateOnChange: false,
     validateOnBlur:false,

@@ -74,6 +74,29 @@ const SectionInfo = () => {
     setEstadoFavorito([])
   }
 
+  const existe = (cuidad) => {
+    const exist = estadoFavorito.some((favorito) => favorito.nombre === cuidad);
+    return exist
+  };
+
+  const AgregarObjeto = (cuidad) => {
+    setHeart(!heart); // Cambia el estado de heart
+    if (!heart) {
+      let ternario = existe(cuidad)
+        if(ternario){
+        }else{
+          setEstadoFavorito([...estadoFavorito, objetoFavorito])
+        }
+         // Si el corazón no está marcado, agrega el objeto a estadoFavorito
+         
+    }
+    const fav = ()=>{
+      setHeart(false)
+    }
+
+  
+  };
+
 useEffect(() => {
   setDiaOn(diaActual);
 }, [diaActual]);
@@ -97,7 +120,7 @@ useEffect(() => {                   //aca espera a que ya este seteado el estado
     </div>
     <section className="favorito">
     <div className="buscador">
-    <Buscador setHeart={setHeart}  peticion={peticion} peticionDias={peticionDias} peticionMapas={peticionMapas} />
+    <Buscador  existe={existe} setHeart={setHeart}  peticion={peticion} peticionDias={peticionDias} peticionMapas={peticionMapas} />
     </div>
     <div className="favorito__tarjetas">
     <div className="container__button__vaciarFavoritos">
@@ -117,7 +140,7 @@ useEffect(() => {                   //aca espera a que ya este seteado el estado
     </div>
     </section>
     <section className="infoCuidad">
-       <TarjetaPrincipal heart={heart} setHeart={setHeart}  data={data} estadoFavorito={estadoFavorito} setEstadoFavorito={setEstadoFavorito} />
+       <TarjetaPrincipal existe={existe} heart={heart} setHeart={setHeart}  data={data} estadoFavorito={estadoFavorito} setEstadoFavorito={setEstadoFavorito} />
        <div className="infoCuidad__diaSemana"> 
        {
         Object.keys(data).length > 0 && (
