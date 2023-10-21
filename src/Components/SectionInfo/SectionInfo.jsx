@@ -58,7 +58,7 @@ const SectionInfo = () => {
         }
     });
 }
-const peticionMapas = () => {
+   const peticionMapas = () => {
   fetch('https://tile.openweathermap.org/map/wind_new/15/100/100.png?appid=56fb42e6cafbcdee72360410ea42141c&lang=es')
     .then((response) => response) // Obtener la URL directamente
     .then((response) => {
@@ -69,6 +69,10 @@ const peticionMapas = () => {
       console.error('Error en la solicitud del mapa:', error);
     });
 }
+
+  const eliminarFavoritos = ()=>{
+    setEstadoFavorito([])
+  }
 
 useEffect(() => {
   setDiaOn(diaActual);
@@ -85,7 +89,6 @@ useEffect(() => {                   //aca espera a que ya este seteado el estado
 }, [dia2]);
 
    
-   console.log({data})
   return (
     
     <div className="SectionInfo">
@@ -97,6 +100,9 @@ useEffect(() => {                   //aca espera a que ya este seteado el estado
     <Buscador setHeart={setHeart}  peticion={peticion} peticionDias={peticionDias} peticionMapas={peticionMapas} />
     </div>
     <div className="favorito__tarjetas">
+    <div className="container__button__vaciarFavoritos">
+    <button onClick={()=>eliminarFavoritos()} className="button__vaciarFavoritos">Vaciar favoritos</button>
+    </div>
     {
       estadoFavorito.length > 0 ?
       estadoFavorito.map((favorito)=>(

@@ -18,7 +18,7 @@ const TarjetaPrincipal = ( {data, estadoFavorito, setEstadoFavorito, heart, setH
        }   
     }
 
-    const toggleHeart = () => {
+    const AgregarObjeto = () => {
       setHeart(!heart); // Cambia el estado de heart
     
       if (!heart) {
@@ -30,20 +30,30 @@ const TarjetaPrincipal = ( {data, estadoFavorito, setEstadoFavorito, heart, setH
       }
     
     };
+
+    const arregloFiltrado =  estadoFavorito.filter((objeto)=>{
+      const nuevoArreglo = objeto.nombre !== data.name
+      return nuevoArreglo
+    })
+    const eliminarObjeto = ()=>{
+      setHeart(!heart)
+        setEstadoFavorito(arregloFiltrado)
+    }
+      
+
+    
+
     
 
 
+     console.log({estadoFavorito})
+
+     
 
 
 
 
 
-
-
-
-
-  console.log({objetoFavorito})
-  console.log({estadoFavorito})
   return (
 
     <div className='tarjetaPrincipal'>
@@ -56,7 +66,7 @@ const TarjetaPrincipal = ( {data, estadoFavorito, setEstadoFavorito, heart, setH
         
         {
           Object.keys(data).length > 0 &&
-          !heart ?  <div style={{cursor:"pointer"}} onClick={()=>toggleHeart()}> <FavoriteBorderIcon  /> </div >    : <div  style={{cursor:"pointer"}} onClick={()=>setHeart(!heart)}> <FavoriteIcon /> </div>   
+          !heart ?  <div style={{cursor:"pointer"}} onClick={()=>AgregarObjeto()}> <FavoriteBorderIcon  /> </div >    : <div onClick={()=>eliminarObjeto()} style={{cursor:"pointer"}}> <FavoriteIcon /> </div>   
         }
         
         </div>

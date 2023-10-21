@@ -5,7 +5,6 @@ import TarjetaSecundaria from '../TarjetaSecundaria/TarjetaSecundaria'
 import TarjetaSecundariaHora from '../TarjetaSecundariaHora/TarjetaSecundariaHora'
 const TarjetaHorario = ( {diaOn, fechaHoras} ) => {
 
-  console.log({diaOn})
   return (
    
     <div className='tarjetaHorario'>
