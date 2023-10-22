@@ -53,3 +53,10 @@
     display: flex;
     justify-content: space-between;
 }
+
+.temperaturaDescription__temperaturas{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+}

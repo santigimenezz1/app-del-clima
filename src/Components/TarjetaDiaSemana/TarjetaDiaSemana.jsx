@@ -40,9 +40,9 @@ const TarjetaDiaSemana = ({ dia, maxima, minima, setDiaOn, dia2, dia3, dia4, dia
 
   return (
     <div onClick={() => setDiaOn_setFechaHoras()} className='tarjetaDiaSemana'>
-    <div style={{display:"flex", justifyContent:"space-between"}}>
+    <div className='tarjetaDiaSemana__info' style={{display:"flex", justifyContent:"space-between"}}>
     <h1>{dayOfWeek}</h1> {/* Muestra el día de la semana */}
-    <div>
+    <div className='tarjetaDiaSemana__temperaturas'>
     <h1 className='temperatura'>Máx: 25º</h1>
     <h1 className='temperatura'>Míx: 14º</h1>
   </div>

@@ -194,6 +194,15 @@
     .container__tarjetaSecundariaHora{
         width: 44vw;
     } 
+    .tarjetaSecundaria h1{
+        font-size: 20px;
+    }
+    .container__sinFavoritos h1{
+        font-size: 18px;
+    }
+    .tarjetaSecundaria__valor{
+        font-size: 40px;
+    }
 }
 
 
@@ -226,6 +235,43 @@
     .container__tarjetaSecundariaHora{
         width: 44vw;
     } 
+    .container__temperaturaDescription{
+        flex-direction: column;
+        width: 300px;
+    }
+    .temperaturaDescription__temperaturas{
+        display: flex;
+        flex-direction: row;
+        width: 300px;
+        gap: 0px;
+        margin-bottom: 10px;
+    }
+    .tarjetaPrincipal{
+        width: 100%;
+    }
+    .tarjetaPrincipal__maxima{
+        font-size: 12px;
+    }
+    .tarjetaPrincipal__minima{
+        font-size: 12px;
+    }
+  
+    .container__sinFavoritos h1{
+        font-size: 16px;
+    }
+    .tarjetaSecundaria__valor{
+        font-size: 40px;
+    }
+    .tarjetaSecundaria h2{
+        font-size: 15px;
+    }
+    .tarjetaPrincipal__temperaturaActual{
+        font-size: 90px;
+    }
+    .tarjetasSecundarias{
+        width: 270px;
+       
+    }
 }
 
 @media screen and (max-width: 360px) {
@@ -257,6 +303,25 @@
     .container__tarjetaSecundariaHora{
         width: 44vw;
     } 
+    .container__sinFavoritos h1{
+        font-size: 14px;
+    }
+    .tarjetaSecundaria__valor{
+        font-size: 40px;
+    }
+    .tarjetaSecundaria h2{
+        font-size: 15px;
+    }
+    .tarjetaPrincipal__temperaturaActual{
+        font-size: 80px;
+    }
+
+    .tarjetaDiaSemana__info{
+        flex-direction: column;
+    }
+    .iconClima h1{
+        font-size: 12px;
+    }  
 }
 
 @media screen and (max-width: 320px) {
@@ -288,4 +353,17 @@
     .container__tarjetaSecundariaHora{
         width: 44vw;
     } 
+    .iconClima h1{
+        font-size: 10px;
+    }
+
+    .temperaturaDescription__temperaturas{
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        gap: 0px;
+        margin-bottom: 10px;
+        justify-content: center;
+        align-items: center;
+    }
 }

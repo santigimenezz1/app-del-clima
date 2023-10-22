@@ -20,7 +20,7 @@
 .tarjetaDiaSemana__info{
     display: flex;
     justify-content: start;
-    gap: 15px;
+    gap: 5px;
     align-items: center;
 }
 .tarjetaDiaSemana__info img{
@@ -35,4 +35,8 @@
 }
 .temperatura{
     font-size: 14px;
+}
+
+.tarjetaDiaSemana__temperaturas{
+    flex-direction: column;
 }
