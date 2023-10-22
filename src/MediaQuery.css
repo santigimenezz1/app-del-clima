@@ -203,6 +203,9 @@
     .tarjetaSecundaria__valor{
         font-size: 40px;
     }
+    .container__error h1{
+        font-size: 6vw;
+    }
 }
 
 
@@ -269,8 +272,12 @@
         font-size: 90px;
     }
     .tarjetasSecundarias{
-        width: 270px;
-       
+        width: 270px; 
+    }
+    .tarjetaHorario__container__titulo{
+        width: 380px;
+        padding-left: 0px;
+        marginl
     }
 }
 
