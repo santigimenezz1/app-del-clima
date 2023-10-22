@@ -70,8 +70,8 @@ const TarjetaDiaSemana = ({ dia,  setDiaOn, dia2, dia3, dia4, dia5, setFechaHora
     <div className='tarjetaDiaSemana__info' style={{display:"flex", justifyContent:"space-between"}}>
     <h1>{dayOfWeek}</h1> {/* Muestra el día de la semana */}
     <div className='tarjetaDiaSemana__temperaturas'>
-    <h1 className='temperatura'>{maxima}º</h1>
-    <h1 className='temperatura'>{(minima - 273.15).toFixed(0)}º</h1>
+    <h1 className='temperatura'>Máx: {maxima}º</h1>
+    <h1 className='temperatura'> Mín: {(minima - 273.15).toFixed(0)}º</h1>
   </div>
     </div>
 
