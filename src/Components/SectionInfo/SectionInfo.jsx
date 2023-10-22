@@ -70,6 +70,7 @@ const SectionInfo = () => {
 
   const eliminarFavoritos = ()=>{
     setEstadoFavorito([])
+    setHeart(false)
   }
 
   const existe = (cuidad) => {
