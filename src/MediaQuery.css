@@ -20,6 +20,9 @@
     .container__tarjetaSecundariaHora{
         width: 27vw;
     } 
+    .tarjetaSecundaria h1{
+        font-size: 25px;
+    }
 }
 
 @media screen and (max-width: 900px) {
@@ -211,6 +214,68 @@
     .tarjetaHora{
       width: 90px;
       height: 120px;
+    }
+    .container__tarjetasHora{
+        width: 100vw;
+        padding: 10px;
+    }
+
+    .section__SecundariasHora{
+        width: 100vw;
+    }
+    .container__tarjetaSecundariaHora{
+        width: 44vw;
+    } 
+}
+
+@media screen and (max-width: 360px) {
+    /*SECTION FAVORITOS*/
+    .buscador__button{
+        width: 70px;
+    }
+    
+    /*SECTION INFO*/
+    .infoCuidad__diaSemana{
+        flex-wrap: wrap;
+    }
+    .tarjetaDiaSemana{
+        width: 42vw;
+        height: 130px;
+    }
+    .tarjetaHora{
+      width: 70px;
+      height: 120px;
+    }
+    .container__tarjetasHora{
+        width: 100vw;
+        padding: 10px;
+    }
+
+    .section__SecundariasHora{
+        width: 100vw;
+    }
+    .container__tarjetaSecundariaHora{
+        width: 44vw;
+    } 
+}
+
+@media screen and (max-width: 320px) {
+    /*SECTION FAVORITOS*/
+    .buscador__button{
+        width: 70px;
+    }
+    
+    /*SECTION INFO*/
+    .infoCuidad__diaSemana{
+        flex-wrap: wrap;
+    }
+    .tarjetaDiaSemana{
+        width: 38vw;
+        height: 130px;
+    }
+    .tarjetaHora{
+      width: 65px;
+      height: 110px;
     }
     .container__tarjetasHora{
         width: 100vw;
