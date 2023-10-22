@@ -10,7 +10,6 @@ const TarjetaHora = ( {dia, temperatura, hora, clima} ) => {
       setIcon(iconUrl)
      },[hora])
    
-   console.log({hora})
 
   return (
     <div className='tarjetaHora'>

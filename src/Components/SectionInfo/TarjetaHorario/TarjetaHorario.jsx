@@ -6,7 +6,6 @@ import TarjetaSecundariaHora from '../TarjetaSecundariaHora/TarjetaSecundariaHor
 const TarjetaHorario = ( {diaOn, fechaHoras} ) => {
 
 
-  console.log({diaOn})
   return (
    
     <div className='tarjetaHorario'>
@@ -28,7 +27,7 @@ const TarjetaHorario = ( {diaOn, fechaHoras} ) => {
       {
            Object.keys(diaOn).length > 0 ?
            diaOn.map((hora)=>(
-             <TarjetaHora key={1}  dia={hora.dt_txt.slice(11,16)} clima={hora.weather[0].description} temperatura={(hora.main.temp - 273.15).toFixed(0)} hora={hora}/>
+             <TarjetaHora key={hora.dt}  dia={hora.dt_txt.slice(11,16)} clima={hora.weather[0].description} temperatura={(hora.main.temp - 273.15).toFixed(0)} hora={hora}/>
            ))
            : 
           <div style={{display:"flex", gap:"5px", marginTop:"50px"}}>

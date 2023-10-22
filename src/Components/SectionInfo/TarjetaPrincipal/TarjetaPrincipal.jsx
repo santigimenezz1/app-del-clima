@@ -55,7 +55,6 @@ const TarjetaPrincipal = ( {data, estadoFavorito, setEstadoFavorito, heart, setH
     
 
 
-     console.log({estadoFavorito})
 
      
 

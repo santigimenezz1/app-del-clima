@@ -112,6 +112,7 @@ useEffect(() => {                   //aca espera a que ya este seteado el estado
 }, [dia2]);
 
    
+
   return (
     
     <div className="SectionInfo">
@@ -149,7 +150,7 @@ useEffect(() => {                   //aca espera a que ya este seteado el estado
         {
          Object.keys(data).length > 0 && (
            diasSemana.slice(1,5).map((dia)=>(
-             <div key={1} >
+             <div key={dia.dt} >
              <TarjetaDiaSemana setFechaHoras={setFechaHoras} setDiaOn={setDiaOn} dia={dia} dia2={dia2} dia3={dia3} dia4={dia4} dia5={dia5}/>
              </div>
            ))
