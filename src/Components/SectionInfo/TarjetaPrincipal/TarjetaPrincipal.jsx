@@ -17,10 +17,7 @@ const TarjetaPrincipal = ( {data, estadoFavorito, setEstadoFavorito, heart, setH
           clima: data.weather[0].description
        }   
     }
-
-  
-
- 
+    
     const AgregarObjeto = (cuidad) => {
       setHeart(!heart); // Cambia el estado de heart
       if (!heart) {

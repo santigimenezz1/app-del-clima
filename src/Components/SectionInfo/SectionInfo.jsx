@@ -30,8 +30,6 @@ const SectionInfo = () => {
    const [estadoFavorito, setEstadoFavorito] = useState([])
    const [heart, setHeart] = useState(false)
 
-
-
    const peticion = (data)=>{
        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${data}&appid=56fb42e6cafbcdee72360410ea42141c&lang=es`)
        .then((response)=>response.json())
@@ -111,10 +109,12 @@ useEffect(() => {                   //aca espera a que ya este seteado el estado
   }
 }, [dia2]);
 
-   
+   useEffect(()=>{
+    peticionDias("Valencia")
+    peticion("Valencia");
+   },[])
 
   return (
-    
     <div className="SectionInfo">
     <div style={{zIndex:"-1"}}>
     <Background />
@@ -163,8 +163,9 @@ useEffect(() => {                   //aca espera a que ya este seteado el estado
         </>
       )
       : 
+      
       <div className="container__error">
-        <h1>La cuidad no se encontró</h1>
+        <h1>La cuidad no fue encontrada</h1>
       </div>
     }
     </section>
