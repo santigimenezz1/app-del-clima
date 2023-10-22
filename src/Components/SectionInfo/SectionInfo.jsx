@@ -140,21 +140,32 @@ useEffect(() => {                   //aca espera a que ya este seteado el estado
     </div>
     </section>
     <section className="infoCuidad">
-       <TarjetaPrincipal existe={existe} heart={heart} setHeart={setHeart}  data={data} estadoFavorito={estadoFavorito} setEstadoFavorito={setEstadoFavorito} />
-       <div className="infoCuidad__diaSemana"> 
-       {
-        Object.keys(data).length > 0 && (
-          diasSemana.slice(1,5).map((dia)=>(
-            <div key={1} >
-            <TarjetaDiaSemana setFechaHoras={setFechaHoras} setDiaOn={setDiaOn} dia={dia} dia2={dia2} dia3={dia3} dia4={dia4} dia5={dia5}/>
-            </div>
-          ))
-        )    
-       }
-       </div>
-       <section className="tarjetasHorario">
-        <TarjetaHorario diaOn={diaOn} fechaHoras={fechaHoras}  />
-       </section>
+    {
+      data.cod == 200 ?(
+
+        <>
+        <TarjetaPrincipal existe={existe} heart={heart} setHeart={setHeart}  data={data} estadoFavorito={estadoFavorito} setEstadoFavorito={setEstadoFavorito} />
+        <div className="infoCuidad__diaSemana"> 
+        {
+         Object.keys(data).length > 0 && (
+           diasSemana.slice(1,5).map((dia)=>(
+             <div key={1} >
+             <TarjetaDiaSemana setFechaHoras={setFechaHoras} setDiaOn={setDiaOn} dia={dia} dia2={dia2} dia3={dia3} dia4={dia4} dia5={dia5}/>
+             </div>
+           ))
+         )    
+        }
+        </div>
+        <section className="tarjetasHorario">
+         <TarjetaHorario diaOn={diaOn} fechaHoras={fechaHoras}  />
+        </section>
+        </>
+      )
+      : 
+      <div className="container__error">
+        <h1>La cuidad no se encontró</h1>
+      </div>
+    }
     </section>
 
     </div>
