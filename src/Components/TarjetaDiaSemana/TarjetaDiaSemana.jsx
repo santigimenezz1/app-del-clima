@@ -1,13 +1,18 @@
 import { useEffect, useState } from 'react';
 import '../TarjetaDiaSemana/tarjetaDiaSemana.css';
 
-const TarjetaDiaSemana = ({ dia, maxima, minima, setDiaOn, dia2, dia3, dia4, dia5, setFechaHoras }) => {
+const TarjetaDiaSemana = ({ dia,  setDiaOn, dia2, dia3, dia4, dia5, setFechaHoras }) => {
   const [estadoPrueba, setEstadoPrueba] = useState("");
   const [dayOfWeek, setDayOfWeek] = useState(""); // Agrega un estado para el día de la semana
   const [tempMaxima, setTempMaxima] = useState()
   const [tempminima, setTempminima] = useState()
   const [clima, setClima] = useState()
   const [icon, setIcon] = useState()
+  const [diaEstado, setDiaEstado] = useState()
+  const [maxima, setMaxima] = useState()
+  const [minima, setMinima] = useState()
+
+  
 
 
   useEffect(() => {
@@ -18,8 +23,28 @@ const TarjetaDiaSemana = ({ dia, maxima, minima, setDiaOn, dia2, dia3, dia4, dia
       setIcon(iconUrl)
       let clima = dia[1].weather[0].description
       setClima(clima)
+      setDiaEstado(dia.estado)
     }
   }, [dia]);
+
+  useEffect(() => {
+    if (diaEstado) {
+      let maxima = 0;
+      let minima = diaEstado[0].main.temp_min
+      for (let i = 0; i < diaEstado.length; i++) {
+        if (diaEstado[i].main.temp_max > maxima) {
+          maxima = (diaEstado[i].main.temp_max - 273.15).toFixed(0)
+        }
+        if(diaEstado[i].main.temp_min < minima){
+          minima = (diaEstado[i].main.temp_min- 273.15).toFixed(0)
+        }
+      }
+      setMaxima(maxima);
+      setMinima(minima)
+    }
+  }, [diaEstado]);
+
+
 
   useEffect(() => {                   //aca espera a que ya este seteado el estado con la fecha en el useEffect anterior
     if (estadoPrueba) {
@@ -37,14 +62,16 @@ const TarjetaDiaSemana = ({ dia, maxima, minima, setDiaOn, dia2, dia3, dia4, dia
     }
 
 
-
+    console.log(diaEstado)
+    console.log({maxima})
+    console.log({minima})
   return (
     <div onClick={() => setDiaOn_setFechaHoras()} className='tarjetaDiaSemana'>
     <div className='tarjetaDiaSemana__info' style={{display:"flex", justifyContent:"space-between"}}>
     <h1>{dayOfWeek}</h1> {/* Muestra el día de la semana */}
     <div className='tarjetaDiaSemana__temperaturas'>
-    <h1 className='temperatura'>Máx: 25º</h1>
-    <h1 className='temperatura'>Míx: 14º</h1>
+    <h1 className='temperatura'>{maxima}º</h1>
+    <h1 className='temperatura'>{minima}º</h1>
   </div>
     </div>
 
