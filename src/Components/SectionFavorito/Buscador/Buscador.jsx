@@ -13,6 +13,7 @@ const Buscador = ({ peticion, peticionDias, peticionMapas, setHeart, existe }) =
       peticionMapas()
       const cuidadMayuscula = data.cuidad.charAt(0).toUpperCase() + data.cuidad.slice(1);
       const exist = existe(cuidadMayuscula);
+      console.log(data.cuidad)
       
       if (exist) {
         setHeart(true);
@@ -23,6 +24,7 @@ const Buscador = ({ peticion, peticionDias, peticionMapas, setHeart, existe }) =
     validateOnChange: false,
     validateOnBlur:false,
   });
+
 
   return (
     <form onSubmit={handleSubmit} className='buscador'>

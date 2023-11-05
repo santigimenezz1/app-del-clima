@@ -1,7 +1,13 @@
 import '../TarjetaFavorito/tarjetaFavorito.css'
-const TarjetaFavorito = ( {peticion, nombre, temperatura, temperaturaMaxima, temperaturaMinima, clima } ) => {
+const TarjetaFavorito = ( {peticion,peticionDias, nombre, temperatura, temperaturaMaxima, temperaturaMinima, clima } ) => {
+   const actualizacionPeticiones = async (nombre)=>{
+    let name = await nombre
+    peticion(nombre)
+    peticionDias(nombre)
+
+   }
   return (
-    <div onClick={()=>peticion(nombre)} className='tarjetaFavorito'>
+    <div onClick={()=>actualizacionPeticiones(nombre)} className='tarjetaFavorito'>
    <div className='tarjetaFavorito__info'>
      <div className='tarjetaFvorito__info__cuidad-horario'>
      <div>
