@@ -57,7 +57,7 @@ const SectionInfo = () => {
             setDiasSemana([{...diaActual, id:"diaActual", estado: diaActual} ,{...dia2, id:"dia2" , estado: dia2}, {...dia3, id:"dia3", estado: dia3}, {...dia4, id:"dia4",estado: dia4}, {...dia5, id:"dia5", estado: dia5}])
         }
     });
-}                                             //Funciones de logica
+}                       //Funciones de logica
    const peticionMapas = () => {
   fetch('https://tile.openweathermap.org/map/wind_new/15/100/100.png?appid=56fb42e6cafbcdee72360410ea42141c&lang=es')
     .then((response) => response) // Obtener la URL directamente
@@ -136,7 +136,7 @@ useEffect(() => {                   //aca espera a que ya este seteado el estado
     {
       estadoFavorito.length > 0 ?
       estadoFavorito.map((favorito)=>(
-     <TarjetaFavorito peticion={peticion} peticionDias={peticionDias}  nombre={favorito.nombre} temperatura={favorito.temperatura} temperaturaMaxima={favorito.temperaturaMaxima} temperaturaMinima={favorito.temperaturaMinima} clima={favorito.clima} />
+     <TarjetaFavorito setHeart={setHeart} existe={existe} peticion={peticion} peticionDias={peticionDias}  nombre={favorito.nombre} temperatura={favorito.temperatura} temperaturaMaxima={favorito.temperaturaMaxima} temperaturaMinima={favorito.temperaturaMinima} clima={favorito.clima} />
       ))
       :
       <div className="container__sinFavoritos">

@@ -1,10 +1,11 @@
 import '../TarjetaFavorito/tarjetaFavorito.css'
-const TarjetaFavorito = ( {peticion,peticionDias, nombre, temperatura, temperaturaMaxima, temperaturaMinima, clima } ) => {
+const TarjetaFavorito = ( {setHeart, existe, peticion,peticionDias, nombre, temperatura, temperaturaMaxima, temperaturaMinima, clima } ) => {
    const actualizacionPeticiones = async (nombre)=>{
     let name = await nombre
     peticion(nombre)
     peticionDias(nombre)
-
+    setHeart(true)
+   
    }
   return (
     <div onClick={()=>actualizacionPeticiones(nombre)} className='tarjetaFavorito'>
