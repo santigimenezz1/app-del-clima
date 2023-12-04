@@ -30,13 +30,14 @@
   }
 
   .buscador__form::placeholder {
-    color: #ff0000; /* Cambia el color del placeholder al que desees */
-    font-size: 54px; /* Cambia el tamaño de fuente del placeholder */
+    color: white; /* Cambia el color del placeholder al que desees */
+    font-size: 15px; /* Cambia el tamaño de fuente del placeholder */
     font-style: italic; /* Cambia el estilo de fuente del placeholder, p. ej., italic */
     /* Agrega otros estilos según tus necesidades */
     background-color: transparent; /* Establece el fondo del input en el color deseado */
     background-clip: content-box; /* Controla el área donde se aplica el fondo */
-    background:"red"
+    background:"red";
+    letter-spacing: 1px;
   }
 
   .buscador__form:focus {
