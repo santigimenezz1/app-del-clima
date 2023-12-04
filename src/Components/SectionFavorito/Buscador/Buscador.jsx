@@ -3,7 +3,7 @@ import '../Buscador/buscador.css'
 import { useState } from 'react'
 import { useFormik } from 'formik'
 const Buscador = ({ peticion, peticionDias, peticionMapas, setHeart, existe }) => {
-  const { handleSubmit, handleChange } = useFormik({
+  const { handleSubmit, handleChange, resetForm } = useFormik({
     initialValues: {
       cuidad: ""
     },

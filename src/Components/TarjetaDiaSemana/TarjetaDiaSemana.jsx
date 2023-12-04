@@ -60,11 +60,6 @@ const TarjetaDiaSemana = ({ dia,  setDiaOn, dia2, dia3, dia4, dia5, setFechaHora
       setDiaOn(dia.estado);
       setFechaHoras(dayOfWeek)
     }
-
-
-    console.log(diaEstado)
-    console.log({maxima})
-    console.log({minima})
   return (
     <div onClick={() => setDiaOn_setFechaHoras()} className='tarjetaDiaSemana'>
     <div className='tarjetaDiaSemana__info' style={{display:"flex", justifyContent:"space-between"}}>
